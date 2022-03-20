@@ -26,6 +26,6 @@ const governmentForms = [
   ];
   
   // TODO: compute the formsEndingWithCy array
-  const formsEndingWithCy = governmentForms.map(form => form.name).filter(element => element.endsWith('cy'));
+  
   // Should show ["Plutocracy", "Kleptocracy", "Theocracy", "Democracy", "Autocracy"]
   console.log(formsEndingWithCy);
