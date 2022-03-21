@@ -20,3 +20,22 @@ function linkInfo(){
 }
 
 linkInfo();
+
+// Handling classes
+// Show if an element has a class
+const has = (id, someClass) => {
+  // TODO: write the function code
+  const element = document.getElementById(id);
+  if(element === null){
+      console.error(`No element has id ${id}`);
+  } else if(element.classList.contains(someClass)){
+      console.log(true);
+  } else {
+      console.log(false);
+  }
+};
+
+has("saxophone", "wood wind");     // Should show true
+has("saxophone", "brass");        // Should show false
+has("trumpet", "brass");          // Should show true
+has("contrabass", "chordophone"); // Should show an error messagefunction has(){
