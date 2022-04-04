@@ -1,21 +1,22 @@
-let regex = new RegExp('/\d+/g')
+let regex = new RegExp('/\w+/g');
+
+const formElement = document.querySelector("form");
 
 
-let boolEqual, boolLength, boolDigit;
+formElement.addEventListener('submit', e => {
+  const password1Element = e.target.elements.password1.value;  
+  const password2Element = e.target.elements.password2.value;
+  const passwordHelp1Element = document.getElementById('passwordhelp1');
+  const passwordHelp2Element = document.getElementById('passwordhelp2');
+  
+  console.log(password1Element.elements);
+  if(password1Element !== password2Element){
+      console.log(password1Element);
+    passwordHelp2Element.innerHTML = 'Doesn\'t match password1';
+    passwordHelp2Element.style.color = 'red';
+  }
+
+  e.preventDefault();
+})
 
 
-const password1 = document.getElementById('password1').addEventListener('input',  e => {
-    const password = e.target.value;
-    // console.log(password1);
-    return password;
-});
-
-console.log(password1);
-
-// if(password1.value !== password2.value) {
-//     let error =  document.createElement('p');
-//     error.innerText= 'Error: password must be at least 6 characters long';
-//     document.querySelector('form').appendChild(error);
-// } else {
-//     boolEqual = true;
-// }
