@@ -17,19 +17,9 @@ formElement.addEventListener("submit", (e) => {
   console.log(password1Element);
   console.log(password2Element);
 
-  if (password2Element !== password1Element) {
+  if (password1Element.length < 6 || password2Element !== password1Element) {
     passwordHelp2Element.innerHTML = "error: invalid confirmation";
     passwordHelp2Element.style.color = "red";
-  } else {
-    passwordHelp1Element.innerHTML = "";
-    passwordHelp2Element.innerHTML = "";
-  }
-
-  if (password1Element.length < 6) {
-    passwordHelp2Element.innerHTML = "error: length must be 6 or greater";
-    passwordHelp2Element.style.color = "red";
-    passwordHelp1Element.innerHTML = "error: length must be 6 or greater";
-    passwordHelp1Element.style.color = "red";
   } else {
     passwordHelp1Element.innerHTML = "";
     passwordHelp2Element.innerHTML = "";
@@ -45,4 +35,11 @@ formElement.addEventListener("submit", (e) => {
   }
 
   e.preventDefault();
+});
+
+const cancel = document.querySelector("input[type=reset]");
+cancel.addEventListener("click", _ => {
+    console.log('reset fired');
+    const passHelp = document.getElementById('passwordHelp');
+    passHelp.innerHTML = "";
 });
