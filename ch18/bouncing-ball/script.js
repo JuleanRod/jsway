@@ -16,7 +16,10 @@ function rotateAnimation(id, speed) {
     }
 }
 
-//once start is click, call the rotate animation
+//once start button is clicked, call the rotate animation
+//and also enable the stop button
 document.getElementById('start').addEventListener('click', e => {
+    const stop = document.getElementById('stop');
+    stop.removeAttribute('disabled');
     rotateAnimation('ball', 4);
 });
