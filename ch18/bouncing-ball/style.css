@@ -1,4 +1,10 @@
 #ball {
     position: relative;
     left: 0px;
+    height: 100px;
+}
+
+.frame {
+    width: 400px;
+    border: 1px solid black;
 }
