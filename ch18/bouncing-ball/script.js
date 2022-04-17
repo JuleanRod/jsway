@@ -20,9 +20,9 @@ function rotateAnimation(id, speed) {
 //and also enable the stop button
 document.getElementById('start').addEventListener('click', e => {
     const stop = document.getElementById('stop');
-    moveBall();
+    animationId = requestAnimationFrame(moveBall);
     stop.removeAttribute('disabled');
-    rotateAnimation('ball', 4);
+    rotateAnimation('ball', .5);
 });
 
 
@@ -34,11 +34,12 @@ const ballWidth = parseFloat(getComputedStyle(ballElement).width);
 // movement value in pixels
 const movement = 2;
 const moveBall = () => {
-    //convert the left position og the ball (value of the form 'XXpx') to a number
+    //convert the left position of the ball (value of the form 'XXpx') to a number
     const xBall =  parseFloat(getComputedStyle(ballElement).left);
-    const max = parseFloat(getComputedStyle(frame).width);
+    const end = parseFloat(getComputedStyle(frame).width);
+    const start = 0;
     // If the ball isn't already to the end of the frame
-    if(xBall + ballWidth <= max) {
+    if(xBall + ballWidth <= end) {
         //ball movement
         ballElement.style.left = (xBall + movement) + 'px';
         animationId = requestAnimationFrame(moveBall);
@@ -49,4 +50,4 @@ const moveBall = () => {
     }
 }
 
-let animationId = requestAnimationFrame(moveBall);
+let animationId;
