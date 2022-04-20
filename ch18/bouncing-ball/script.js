@@ -19,6 +19,7 @@ function rotateAnimation(id, speed) {
 //once start button is clicked, call the rotate animation
 //and also enable the stop button
 document.getElementById('start').addEventListener('click', start);
+document.getElementById('stop').addEventListener('click', stop);
 
 
 function start() {
